@@ -12,7 +12,7 @@
 - https://github.com/zackpcodes/Pathrise-Job-Source/blob/main/Backend/pathrise-DB/data/job.js
 
 ## c)
-- "react-router-dom": Used to add navigation to React.js.
+- 'react-router-dom': Used to add navigation to React.js.
 - 'dotenv': Small module used to load .env files.
 - 'pg-promise': Used to query Postgres DB with built in promise resolution.
 - 'cors': Used to disable cors in dev environment.
