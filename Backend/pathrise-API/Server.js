@@ -9,7 +9,7 @@ const session = require('express-session');
 
 const app = express();
 const port = "3001";
-var db = pgp(`postgres://${process.env.user}:${process.env.password}@${process.env.host}:${process.env.port}/${process.env.database}`)
+var db = pgp(`postgres://zack:pass@pathrise-db:5432/pathrise`) // Parameters should be in .env file. Hard coded for simplicity.
 
 app.use(cookieParser());
 
@@ -22,7 +22,7 @@ app.use(cors({
 }));
 
 app.use(session({
-    secret: process.env.ss, // Even more secure way to store secret would be in dedicated secret manager (e.g. AWS Secrets Manager).
+    secret: 'this is super secret', // A secure way to store secret would be in dedicated secret manager (e.g. AWS Secrets Manager).
     resave: false,
     saveUninitialized: true,
     cookie: {
