@@ -1,0 +1,139 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-right: 10%;
+  padding-left: 10%;
+  background-color:#f8f6f6;
+}
+
+.logo {
+  margin: 10px;
+}
+
+.title {
+  flex: 1;
+  font-size: x-large;
+  color: black;
+  text-align: center;
+  font-weight: 800;
+}
+
+.noResponseText {
+  color: #535fe5;
+  position: fixed;
+  top: 45%;
+}
+
+.jobsList {
+  flex:19;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding-inline-start: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+.jobsListHeader {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  top: 0px;
+  min-height: 8%;
+  min-width: 100%;
+  max-height: 8%;
+  max-width: 100%;
+  background-color: white;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  user-select: none;
+  align-items: center;
+  position: sticky;
+  z-index: 2;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.05);
+}
+
+.text {
+  font-size: medium;
+  margin-left: 10px;
+  flex: 1;
+  flex-basis: 15%;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+
+.ldsellipsis {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 45%;
+}
+.ldsellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #535fe5;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.ldsellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.ldsellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}

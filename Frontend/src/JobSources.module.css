@@ -1,0 +1,89 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-right: 40px;
+  padding-left: 40px;
+  background-color:#f8f6f6;
+  overflow-y: scroll;
+}
+.title {
+  flex: 1;
+  font-size: x-large;
+  color: black;
+  text-align: center;
+  font-weight: 800;
+}
+
+.noResponseText {
+  color: #535fe5;
+  position: fixed;
+  top: 45%;
+}
+
+.jobSourceGrid {
+  flex:19;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+}
+
+.ldsellipsis {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 45%;
+}
+.ldsellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #535fe5;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.ldsellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.ldsellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
