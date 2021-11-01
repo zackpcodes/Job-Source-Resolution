@@ -9,7 +9,7 @@ function JobSources() {
     setBoards(<div className={styles.ldsellipsis}><div></div><div></div><div></div><div></div></div>);
 
     const nothingToSee = <h2 className={styles.noResponseText}>nothing to see here. :/</h2>;
-    fetch('http://localhost:3001/jobsource/')
+    fetch('http://34.125.24.177:3001/jobsource/')
       .then(response => response.json())
       .then(data => {
         if (data.length === 0) {
@@ -30,13 +30,6 @@ function JobSources() {
     <div className={styles.container}>
       <p className={styles.title}>Job Sources</p>
       <div className={styles.jobSourceGrid}>
-        <JobSourceTile data={{
-    "name": "Tech Ladies",
-    "rating": "Great",
-    "root_domain": "hiretechladies.com",
-    "logo_file": "https://storage.googleapis.com/pathrise-app/job_sources/techladies.jpg",
-    "description": "For female software engineers. If you qualify, sign up."
-  }}/>
         {boards}
       </div>
     </div>

@@ -19,7 +19,7 @@ function JobsSearch() {
             </div>);
         const nothingToSee = <h2 className={styles.noResponseText}>nothing to see here. :/</h2>;
 
-        fetch('http://localhost:3001/jobsource/jobs/', {
+        fetch('http://34.125.24.177:3001/jobsource/jobs/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
