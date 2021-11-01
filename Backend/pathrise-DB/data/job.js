@@ -2,6 +2,7 @@ var csv = require('csv-parser');
 var json2csv = require('json2csv');
 var fs = require('fs');
 
+const jobResolutionNumbers = new Map();
 var jobBoards = require('./jobBoards.json');
 function resolveJobSource(data) {
 
@@ -15,7 +16,15 @@ function resolveJobSource(data) {
     if (domain != null){
         let board = jobBoards.find(content => content.root_domain.toLowerCase() == domain[0].toLowerCase())?.name;
         // Return board name if domain[0] matches root from jobBoards.json.
-        if (board) return board;
+        if (board) {
+            let jobCount = jobResolutionNumbers.get(board);
+            if(jobCount) {
+                jobResolutionNumbers.set(board, jobCount + 1);
+            }else{
+                jobResolutionNumbers.set(board, 1);
+            }
+            return board;
+        } 
 
         // Return "Company Website" if domain[0] matches CompanyName field.
         if (domain[0].split('.')[0].toLowerCase() == data.CompanyName.toLowerCase()) return 'Company Website';
@@ -32,6 +41,8 @@ fs.createReadStream('job_opportunities.csv')
     })
     .on('end', function () {
         var result = json2csv.parse(jsonData, { fields: Object.keys(jsonData[0]) });
+
+        fs.writeFileSync('total_job_count.txt', JSON.stringify(Object.fromEntries(jobResolutionNumbers)));
         fs.writeFileSync('job_opportunities.csv', result);
     });
 
