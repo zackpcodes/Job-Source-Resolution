@@ -9,7 +9,7 @@ const session = require('express-session');
 
 const app = express();
 const port = "3001";
-var db = pgp(`postgres://zack:pass@pathrise-db:5432/pathrise`) // Parameters should be in .env file. Hard coded for simplicity.
+var db = pgp() // Parameters should be in .env file. Hard coded for simplicity.
 
 app.use(cookieParser());
 
